@@ -11,7 +11,10 @@ abstract class Node {
 class LinkedListNode implements Node {
   LinkedListNode(this._value);
 
+  // The value of the node
   final dynamic _value;
+
+  // A list of the node's neighbors
   final List<Node> _neighbors = [];
 
   @override
@@ -34,6 +37,7 @@ class Graph {
     node2.neighbors.add(node1);
   }
 
+  // A list of nodes in the graph
   final List<Node> _nodes = [];
 }
 
@@ -54,7 +58,7 @@ void main() {
   graph.addEdge(node2, node3);
 
   // Iterate over the neighbors of node 1
-  for (final neighbor in node1.neighbors) {
+   for (final neighbor in node1.neighbors) {
     print(neighbor.value);
   }
 }
