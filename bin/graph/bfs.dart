@@ -28,7 +28,7 @@ class Graph {
         // Mark it as visited
         visited.add(vertex);
 
-        // Print it
+        // Printing
         print(vertex);
       }
 

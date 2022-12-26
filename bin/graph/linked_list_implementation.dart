@@ -59,6 +59,7 @@ void main() {
 
   // Iterate over the neighbors of node 1
    for (final neighbor in node1.neighbors) {
+    //Printing
     print(neighbor.value);
   }
 }

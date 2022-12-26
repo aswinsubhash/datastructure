@@ -1,3 +1,5 @@
+// ignore_for_file: curly_braces_in_flow_control_structures
+
 class BuildHeap {
 
   //using the max heap
@@ -34,7 +36,7 @@ class BuildHeap {
   void printHeap(List<int> arr, int n) {
     print("Array representation of Heap is");
 
-    for (int i = 0; i < n; ++i);
+    //for (int i = 0; i < n; ++i)
     print(arr);
   }
 }
