@@ -10,18 +10,18 @@ class Graph {
     adjList[destination].add(source);
   }
 
-  void dfs(int start) {
+  void bfs(int start) {
     // Set of visited vertices
     final visited = <int>{};
 
-    // Stack to keep track of the vertices being processed
-    final stack = <int>[];
-    stack.add(start);
+    // Queue to keep track of the vertices being processed
+    final queue = <int>[];
+    queue.add(start);
 
-    // While there are vertices in the stack
-    while (stack.isNotEmpty) {
-      // Pop the top vertex from the stack
-      final vertex = stack.removeLast();
+    // While there are vertices in the queue
+    while (queue.isNotEmpty) {
+      // Remove the first vertex from the queue
+      final vertex = queue.removeAt(0);
 
       // If the vertex has not been visited yet
       if (!visited.contains(vertex)) {
@@ -36,8 +36,8 @@ class Graph {
       for (final neighbor in adjList[vertex]) {
         // If the neighbor has not been visited yet
         if (!visited.contains(neighbor)) {
-          // Push it to the stack
-          stack.add(neighbor);
+          // Add it to the queue
+          queue.add(neighbor);
         }
       }
     }
@@ -57,6 +57,6 @@ void main() {
   graph.addEdge(2, 3);
   graph.addEdge(3, 4);
 
-  // Perform a DFS starting from vertex 0
-  graph.dfs(0);
+  // Perform a BFS starting from vertex 0
+  graph.bfs(0);
 }
