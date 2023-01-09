@@ -7,7 +7,7 @@ class Graph {
   // Constructor that takes the number of vertices in the graph as a parameter
   Graph(this.numVertices) {
     adjacencyMatrix =
-        List.generate(numVertices, (_) => List.filled(numVertices, 0));
+        List.generate(numVertices, (_) => List.filled(numVertices, numVertices));
   }
 
   // Method that adds an edge between two vertices u and v

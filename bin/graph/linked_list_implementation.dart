@@ -26,6 +26,9 @@ class LinkedListNode implements Node {
 
 // Define a class for a graph
 class Graph {
+
+    // A list of nodes in the graph
+  final List<Node> _nodes = [];
   // Add a node to the graph
   void addNode(Node node) {
     _nodes.add(node);
@@ -37,8 +40,7 @@ class Graph {
     node2.neighbors.add(node1);
   }
 
-  // A list of nodes in the graph
-  final List<Node> _nodes = [];
+
 }
 
 void main() {
