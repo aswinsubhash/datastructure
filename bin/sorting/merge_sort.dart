@@ -1,20 +1,19 @@
+void mergeSort(List<int> list) {
+  // Check if the list has a length less than or equal to 1
+  if (list.length <= 1) return;
 
-int mergeSort(List<int> list, int count) {
-  if (list.length <= 1) return count;
-  
-  count++; //increment the counter
-  
   // Get the middle index of the list
   var middle = list.length ~/ 2;
 
   // Split the list into left and right sublists
-  var left = list.sublist(0, middle);
-  var right = list.sublist(middle);
-print(left);
-print(right); 
+  var leftList = list.sublist(0, middle);
+  var rightList = list.sublist(middle,list.length);
+  print(leftList);
+  print(rightList);
+
   // Recursively sort the left and right sublists
-  count = mergeSort(left, count);
-  count = mergeSort(right, count);
+  mergeSort(leftList);
+  mergeSort(rightList);
 
   // Initialize variables for merging the sublists back together
   var i = 0;
@@ -22,42 +21,39 @@ print(right);
   var k = 0;
 
   // While there are elements in both sublists
-  while (i < left.length && j < right.length) {
+  while (i < leftList.length && j < rightList.length) {
     // Compare the first element of the left sublist to the first element of the right sublist
-    if (left[i] < right[j]) {
+    if (leftList[i] < rightList[j]) {
       // If the left element is smaller, add it to the main list
-      list[k] = left[i];
+      list[k] = leftList[i];
       i++;
     } else {
       // If the right element is smaller, add it to the main list
-      list[k] = right[j];
+      list[k] = rightList[j];
       j++;
     }
     k++;
   }
 
   // If there are remaining elements in the left sublist
-  while (i < left.length) {
+  while (i < leftList.length) {
     // Add them to the main list
-    list[k] = left[i];
+    list[k] = leftList[i];
     i++;
     k++;
   }
 
   // If there are remaining elements in the right sublist
-  while (j < right.length) {
+  while (j < rightList.length) {
     // Add them to the main list
-    list[k] = right[j];
+    list[k] = rightList[j];
     j++;
     k++;
   }
-  return count;
 }
 
 void main() {
-  int count = 0;
   List<int> list = [7,8,1,5,2,9];
-  count = mergeSort(list, count);
-  print(list);
-  print(count);
+  mergeSort(list);
+  print(list); 
 }
