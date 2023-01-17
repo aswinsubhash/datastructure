@@ -1,3 +1,6 @@
+// ? Time complexity of merger sort is O(nlogn)  in all the cases
+//* Worst case scenario is when the array is sorted in descending order.
+
 void mergeSort(List<int> list) {
   // Check if the list has a length less than or equal to 1
   if (list.length <= 1) return;
@@ -7,7 +10,7 @@ void mergeSort(List<int> list) {
 
   // Split the list into left and right sublists
   var leftList = list.sublist(0, middle);
-  var rightList = list.sublist(middle,list.length);
+  var rightList = list.sublist(middle, list.length);
   print(leftList);
   print(rightList);
 
@@ -53,7 +56,7 @@ void mergeSort(List<int> list) {
 }
 
 void main() {
-  List<int> list = [7,8,1,5,2,9];
+  List<int> list = [7, 8, 1, 5, 2, 9];
   mergeSort(list);
-  print(list); 
+  print(list);
 }
