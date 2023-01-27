@@ -1,5 +1,5 @@
-// ? Time complexity of merger sort is O(nlogn)  in all the cases
-//* Worst case scenario is when the array is sorted in descending order.
+//  Time complexity of merger sort is O(nlogn)  in all the cases
+// Worst case scenario is when the array is sorted in descending order.
 
 void mergeSort(List<int> list) {
   // Check if the list has a length less than or equal to 1
