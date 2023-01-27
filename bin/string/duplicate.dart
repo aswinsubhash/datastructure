@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   String string = 'aswinssinin';
   int counnt = 0;
 
